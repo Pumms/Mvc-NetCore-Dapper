@@ -9,5 +9,5 @@
   "Server=<b>Adjust with your SQL Server Name</b>; Database=<b>Database Name</b>; Trusted_Connection=True; MultipleActiveResultSets=True;"</li>
   <li>Add-Migration with Package Manager Console</li>
   <li>Update Database</li>
-  <li>And Run a Program</li>
+  <li>And Run the Program</li>
 </ol>
