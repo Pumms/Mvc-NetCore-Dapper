@@ -115,7 +115,7 @@ function clearForm() {
 //INSERT
 function Save() {
     debugger;
-    if ($('#id').val() == "" || $('#npm').val() == "" || $('#name').val() == "" || $('#jurusan').val() == "" || $('#kampus').val() == "") {
+    if ($('#npm').val() == "" || $('#name').val() == "" || $('#jurusan').val() == "" || $('#kampus').val() == "") {
         //Eksekusi if validation true
         Swal.fire({
             icon: 'warning',
