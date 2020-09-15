@@ -1,0 +1,14 @@
+﻿td.npm {
+    width:50px;
+}
+
+td.details-control {
+    background: url('https://img.icons8.com/cotton/64/000000/plus--v1.png') no-repeat center center;
+    background-size: 30px;
+    cursor: pointer;
+}
+
+tr.shown td.details-control {
+    background: url('https://img.icons8.com/cotton/64/000000/minus--v1.png') no-repeat center center;
+    background-size: 30px;
+}
