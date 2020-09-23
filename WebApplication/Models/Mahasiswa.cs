@@ -23,6 +23,7 @@ namespace WebApplication.Models
         [Required]
         [Column(TypeName ="nvarchar(40)")]
         public string Kampus { get; set; }
-
+        [Required]
+        public string Foto { get; set; }
     }
 }

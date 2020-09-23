@@ -3,9 +3,11 @@
     ViewData["Title"] = "Data Mahasiswa";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
 @section CSS{
     <link rel="stylesheet" href="~/css/Mahasiswa.css">
+}
+@section Scripts{
+    <script src="~/js/Mahasiswa.js"></script>
 }
 
 <h1>Data Mahasiswa</h1>
@@ -42,7 +44,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form id="formMhs">
+                <form id="formMhs" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="npm">NPM</label>
                         <input type="text" class="form-control" id="npm" placeholder="NPM" maxlength="8">
@@ -86,7 +88,3 @@
         </div>
     </div>
 </div>
-
-@section Scripts{
-    <script src="~/js/Mahasiswa.js"></script>
-}

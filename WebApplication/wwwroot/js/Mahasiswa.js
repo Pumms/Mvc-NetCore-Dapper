@@ -114,7 +114,6 @@ function clearForm() {
 
 //INSERT
 function Save() {
-    debugger;
     if ($('#npm').val() == "" || $('#name').val() == "" || $('#jurusan').val() == "" || $('#kampus').val() == "") {
         //Eksekusi if validation true
         Swal.fire({
@@ -124,19 +123,18 @@ function Save() {
         })
         return false;
     } else {
-        var Mahasiswa = new Object();
-        Mahasiswa.NPM = $('#npm').val();
-        Mahasiswa.Name = $('#name').val();
-        Mahasiswa.Jenis_Kelamin = $('input[name="jenkel"]:checked').val();
-        Mahasiswa.Jurusan = $('#jurusan').val();
-        Mahasiswa.Kampus = $('#kampus').val();
+        var data = new Object();
+        data.NPM = $('#npm').val();
+        data.Name = $('#name').val();
+        data.Jenis_Kelamin = $('input[name="jenkel"]:checked').val();
+        data.Jurusan = $('#jurusan').val();
+        data.Kampus = $('#kampus').val();
 
         $.ajax({
             type: 'POST',
             url: '/Mahasiswa/Insert',
-            data: Mahasiswa,
+            data: data,
             success: function (result) {
-                debugger;
                 if (result.StatusCode == 200) {
                     Swal.fire({
                         icon: 'success',
@@ -227,15 +225,15 @@ function Update() {
             } else {
                 //Eksekusi if validation false
                 //Lakukan Update data
-                var Mahasiswa = new Object();
-                Mahasiswa.Id = $('#id').val();
-                Mahasiswa.NPM = $('#npm').val();
-                Mahasiswa.Name = $('#name').val();
-                Mahasiswa.Jenis_Kelamin = $('input[name="jenkel"]:checked').val();
-                Mahasiswa.Jurusan = $('#jurusan').val();
-                Mahasiswa.Kampus = $('#kampus').val();
+                var data = new Object();
+                data.Id = $('#id').val();
+                data.NPM = $('#npm').val();
+                data.Name = $('#name').val();
+                data.Jenis_Kelamin = $('input[name="jenkel"]:checked').val();
+                data.Jurusan = $('#jurusan').val();
+                data.Kampus = $('#kampus').val();
 
-                if (npm != Mahasiswa.NPM) {
+                if (npm != data.NPM) {
                     Swal.fire({
                         icon: 'error',
                         position: 'center',
@@ -246,7 +244,7 @@ function Update() {
                     $.ajax({
                         type: 'POST',
                         url: '/Mahasiswa/Update',
-                        data: Mahasiswa,
+                        data: data,
                         success: function (result) {
                             debugger;
                             if (result.StatusCode == 200) {
@@ -295,9 +293,8 @@ function Delete(id) {
         if (result.value) {
             $.ajax({
                 type: 'POST',
-                url: '/Mahasiswa/Delete/'+id,
+                url: '/Mahasiswa/Delete/' + id,
                 success: function (result) {
-                    debugger;
                     if (result.StatusCode == 200) {
                         Swal.fire({
                             icon: 'success',
@@ -321,6 +318,25 @@ function Delete(id) {
         } else {
             //else Question for Update
             //do nothing
+        }
+    });
+}
+
+function uploadFile(inputId) {
+    var fileUpload = $("#" + inputId).get(0);
+    var files = fileUpload.files;
+
+    var formData = new FormData();
+    formData.append('file', files[0]);
+
+    $.ajax({
+        url: '/Mahasiswa/Foto',
+        type: 'POST',
+        data: formData,
+        processData: false,
+        contentType: false,
+        success: function (result) {
+            alert('sukses upload photo');
         }
     });
 }

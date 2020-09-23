@@ -1,8 +1,11 @@
 ﻿using Dapper;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Configuration;
 using System.Data;
+using System.IO;
+using System.Threading.Tasks;
 using WebApplication.Models;
 
 namespace WebApplication.Controllers
@@ -93,6 +96,22 @@ namespace WebApplication.Controllers
                 var execute = connection.Query<Mahasiswa>(spName, parameters, commandType: CommandType.StoredProcedure);
                 return Json(Ok());
             }
+        }
+
+        public async Task<IActionResult> FileUpload(IFormFile file)
+        {
+            // Always check content length
+            if (file?.Length > 0)
+            {
+                var filePath = Path.GetTempFileName();
+
+                using (var stream = System.IO.File.Create(filePath))
+                {
+                    await file.CopyToAsync(stream);
+                }
+            }
+
+            return Ok();
         }
     }
 }

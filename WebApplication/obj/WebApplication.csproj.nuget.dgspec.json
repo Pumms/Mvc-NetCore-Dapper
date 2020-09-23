@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Github\\Mvc-NetCore-Dapper\\WebApplication\\WebApplication.csproj": {}
+    "D:\\Projek Visual Studio\\Web\\WebApplication\\WebApplication\\WebApplication.csproj": {}
   },
   "projects": {
-    "D:\\Github\\Mvc-NetCore-Dapper\\WebApplication\\WebApplication.csproj": {
+    "D:\\Projek Visual Studio\\Web\\WebApplication\\WebApplication\\WebApplication.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Github\\Mvc-NetCore-Dapper\\WebApplication\\WebApplication.csproj",
+        "projectUniqueName": "D:\\Projek Visual Studio\\Web\\WebApplication\\WebApplication\\WebApplication.csproj",
         "projectName": "WebApplication",
-        "projectPath": "D:\\Github\\Mvc-NetCore-Dapper\\WebApplication\\WebApplication.csproj",
+        "projectPath": "D:\\Projek Visual Studio\\Web\\WebApplication\\WebApplication\\WebApplication.csproj",
         "packagesPath": "C:\\Users\\muham\\.nuget\\packages\\",
-        "outputPath": "D:\\Github\\Mvc-NetCore-Dapper\\WebApplication\\obj\\",
+        "outputPath": "D:\\Projek Visual Studio\\Web\\WebApplication\\WebApplication\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\muham\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -51,6 +51,12 @@
               "target": "Package",
               "version": "[3.1.7, )"
             },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.7, )"
+            },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[3.1.7, )"
@@ -60,10 +66,6 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[3.1.7, )"
-            },
-            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
-              "target": "Package",
-              "version": "[3.1.4, )"
             }
           },
           "imports": [
